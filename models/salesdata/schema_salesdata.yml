@@ -1,0 +1,54 @@
+
+version: 2
+
+models:
+    - name: customer
+      description: "customer table dbt model"
+      columns:
+          - name: C_CUSTKEY
+            description: "The primary key for customer table"
+            tests:
+                - unique
+                - not_null
+
+          - name: C_ADDRESS
+            description: "customer address"
+            tests:
+                - not_null
+          
+          - name: C_PHONE
+            description: "customer phone number"
+            tests:
+                - not_null
+
+    - name: orders
+      description: "orders table dbt model"
+      columns:
+          - name: O_ORDERKEY
+            description: "The primary key for orders table"
+            tests:
+                - unique
+                - not_null
+          
+          - name: O_ORDERDATE
+            description: "order date of orders"
+            tests:
+                - not_null
+
+    - name: lineitem
+      description: "lineitem table dbt model"
+      columns:
+          - name: L_ORDERKEY
+            description: "The primary key for lineitem table"
+            tests:
+                - not_null
+
+    - name: supplier
+      description: "supplier table dbt model"
+      columns:
+          - name: S_SUPPKEY
+            description: "The primary key for supplier table"
+            tests:
+                - unique
+                - not_null
+                
